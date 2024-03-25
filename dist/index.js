@@ -1,31 +1,28 @@
 (function () {
     'use strict';
 
-    const baseUrl = '' ;
-    console.log(baseUrl);
+    const baseUrl = '/japanese-player' ;
     const subtitles = [
         {
-            src: `${baseUrl}/src/mock/video_subs_en.vtt`,
-            srclang: 'en',
-            label: 'English',
-            default: true
-        },
-        {
-            src: `${baseUrl}/src/mock/video_subs_en.vtt`,
+            src: `${baseUrl}/src/mock/video_subs_ru.vtt`,
             srclang: 'ru',
-            label: 'Русский'
+            label: 'Русский',
         },
         {
-            src: `${baseUrl}/src/mock/video_subs_en.vtt`,
+            src: `${baseUrl}/src/mock/video_subs_jp.vtt`,
             srclang: 'jpn',
-            label: '日本語'
+            label: '日本語',
         }
     ];
 
-    const japaneseVideoPlayer = document.querySelector('japanese-video-player');
-    japaneseVideoPlayer.src = `${baseUrl}/src/mock/video.mp4`;
-    // @ts-expect-error HTMLElement does not expect subtitles in its signature.
+    const handleSubtitlesTokenClick = (token) => {
+        alert(token);
+    };
+    const japaneseVideoPlayer = document.createElement('japanese-video-player');
+    japaneseVideoPlayer.src = `${baseUrl}/src/mock/Boku dake ga Inai Machi 01.webm`;
     japaneseVideoPlayer.subtitles = subtitles;
+    japaneseVideoPlayer.handleTokenClick = handleSubtitlesTokenClick;
+    document.body.appendChild(japaneseVideoPlayer);
 
 })();
 //# sourceMappingURL=index.js.map

@@ -663,7 +663,7 @@
    * SPDX-License-Identifier: BSD-3-Clause
    */
   var t$1 = globalThis,
-    e$2 = t$1.ShadowRoot && (void 0 === t$1.ShadyCSS || t$1.ShadyCSS.nativeShadow) && "adoptedStyleSheets" in Document.prototype && "replace" in CSSStyleSheet.prototype,
+    e$4 = t$1.ShadowRoot && (void 0 === t$1.ShadyCSS || t$1.ShadyCSS.nativeShadow) && "adoptedStyleSheets" in Document.prototype && "replace" in CSSStyleSheet.prototype,
     s$2 = Symbol(),
     o$3 = new WeakMap();
   var n$3 = /*#__PURE__*/function () {
@@ -677,7 +677,7 @@
       get: function get() {
         var t = this.o;
         var s = this.t;
-        if (e$2 && void 0 === t) {
+        if (e$4 && void 0 === t) {
           var _e = void 0 !== s && 1 === s.length;
           _e && (t = o$3.get(s)), void 0 === t && ((this.o = t = new CSSStyleSheet()).replaceSync(this.cssText), _e && o$3.set(s, t));
         }
@@ -708,7 +708,7 @@
       return new n$3(o, t, s$2);
     },
     S$1 = function S(s, o) {
-      if (e$2) s.adoptedStyleSheets = o.map(function (t) {
+      if (e$4) s.adoptedStyleSheets = o.map(function (t) {
         return t instanceof CSSStyleSheet ? t : t.styleSheet;
       });else {
         var _iterator = _createForOfIteratorHelper(o),
@@ -727,7 +727,7 @@
         }
       }
     },
-    c$2 = e$2 ? function (t) {
+    c$2 = e$4 ? function (t) {
       return t;
     } : function (t) {
       return t instanceof CSSStyleSheet ? function (t) {
@@ -755,7 +755,7 @@
    * SPDX-License-Identifier: BSD-3-Clause
    */
   var i$1 = Object.is,
-    e$1 = Object.defineProperty,
+    e$3 = Object.defineProperty,
     r$3 = Object.getOwnPropertyDescriptor,
     h$1 = Object.getOwnPropertyNames,
     o$2 = Object.getOwnPropertySymbols,
@@ -1098,7 +1098,7 @@
         if (s.state && (s.attribute = !1), this._$Ei(), this.elementProperties.set(t, s), !s.noAccessor) {
           var _i4 = Symbol(),
             _r3 = this.getPropertyDescriptor(t, _i4, s);
-          void 0 !== _r3 && e$1(this.prototype, t, _r3);
+          void 0 !== _r3 && e$3(this.prototype, t, _r3);
         }
       }
     }, {
@@ -1247,7 +1247,7 @@
         return t;
       }
     }) : void 0,
-    e = "$lit$",
+    e$2 = "$lit$",
     h = "lit$".concat((Math.random() + "").slice(9), "$"),
     o$1 = "?" + h,
     n$1 = "<".concat(o$1, ">"),
@@ -1308,7 +1308,7 @@
         _y = c.lastIndex, c === f ? "!--" === _u[1] ? c = v : void 0 !== _u[1] ? c = _ : void 0 !== _u[2] ? ($.test(_u[2]) && (r = RegExp("</" + _u[2], "g")), c = m) : void 0 !== _u[3] && (c = m) : c === m ? ">" === _u[0] ? (c = (_r = r) !== null && _r !== void 0 ? _r : f, _d = -1) : void 0 === _u[1] ? _d = -2 : (_d = c.lastIndex - _u[2].length, _a = _u[1], c = void 0 === _u[3] ? m : '"' === _u[3] ? g : p) : c === g || c === p ? c = m : c === v || c === _ ? c = f : (c = m, r = void 0);
       }
       var _x = c === m && t[_i + 1].startsWith("/>") ? " " : "";
-      l += c === f ? _s + n$1 : _d >= 0 ? (o.push(_a), _s.slice(0, _d) + e + _s.slice(_d) + h + _x) : _s + h + (-2 === _d ? _i : _x);
+      l += c === f ? _s + n$1 : _d >= 0 ? (o.push(_a), _s.slice(0, _d) + e$2 + _s.slice(_d) + h + _x) : _s + h + (-2 === _d ? _i : _x);
     }
     return [C(t, l + (t[s] || "<?>") + (2 === i ? "</svg>" : "")), o];
   };
@@ -1339,7 +1339,7 @@
             try {
               for (_iterator.s(); !(_step = _iterator.n()).done;) {
                 var _t2 = _step.value;
-                if (_t2.endsWith(e)) {
+                if (_t2.endsWith(e$2)) {
                   var _i2 = v[a++],
                     _s2 = r.getAttribute(_t2).split(h),
                     _e = /([.?@])?(.*)/.exec(_i2);
@@ -1815,6 +1815,268 @@
     };
   }
 
+  /**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
+  var e$1 = function e(_e, t, c) {
+    return c.configurable = !0, c.enumerable = !0, Reflect.decorate && "object" != _typeof(t) && Object.defineProperty(_e, t, c), c;
+  };
+
+  /**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
+  function e(e, r) {
+    return function (n, s, i) {
+      var o = function o(t) {
+        var _t$renderRoot$querySe, _t$renderRoot;
+        return (_t$renderRoot$querySe = (_t$renderRoot = t.renderRoot) === null || _t$renderRoot === void 0 ? void 0 : _t$renderRoot.querySelector(e)) !== null && _t$renderRoot$querySe !== void 0 ? _t$renderRoot$querySe : null;
+      };
+      if (r) {
+        var _ref = "object" == _typeof(s) ? n : i !== null && i !== void 0 ? i : function () {
+            var t = Symbol();
+            return {
+              get: function get() {
+                return this[t];
+              },
+              set: function set(e) {
+                this[t] = e;
+              }
+            };
+          }(),
+          _e = _ref.get,
+          _r = _ref.set;
+        return e$1(n, s, {
+          get: function get() {
+            var t = _e.call(this);
+            return void 0 === t && (t = o(this), (null !== t || this.hasUpdated) && _r.call(this, t)), t;
+          }
+        });
+      }
+      return e$1(n, s, {
+        get: function get() {
+          return o(this);
+        }
+      });
+    };
+  }
+
+  const style$1 = i$2 `
+    :host {
+      display: block;
+      position: relative;
+    }
+
+    video {
+      width: 100%;
+    }
+`;
+
+  const styles$1 = i$2 `
+  :host {
+    position: absolute;
+    top: 12%;
+    left: 0;
+    right: 0;
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+  }
+`;
+
+  const styles = i$2 `
+  :host {
+    pointer-events: none;
+    display: block;
+    width: 100%;
+    min-height: 24px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    padding: 4px 8px;
+    letter-spacing: 1px;
+    transition: all 150ms ease-in-out;
+  }
+
+  :host([active]) {
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: all;
+  }
+`;
+
+  const style = i$2 `
+:host {
+  color: #ddd;
+}
+
+:host(:hover) {
+  color: #fff;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: default;
+  outline: inherit;
+}
+`;
+
+  class JpToken extends s {
+      constructor() {
+          super(...arguments);
+          this.token = '';
+      }
+      render() {
+          return x `
+    <button @click="${this.handleClick}">
+      ${this.token}
+    </button>`;
+      }
+      handleClick() {
+          var _a;
+          return (_a = this.handleTokenClick) === null || _a === void 0 ? void 0 : _a.call(this, this.token);
+      }
+  }
+  JpToken.is = 'jp-token';
+  JpToken.styles = style;
+  __decorate([
+      n({ type: String }),
+      __metadata("design:type", Object)
+  ], JpToken.prototype, "token", void 0);
+  __decorate([
+      n({ type: Function }),
+      __metadata("design:type", Function)
+  ], JpToken.prototype, "handleTokenClick", void 0);
+  customElements.define(JpToken.is, JpToken);
+
+  class JpLine extends s {
+      constructor() {
+          super();
+          this.lang = '';
+          this.tokens = [];
+          this.active = false;
+          this.handleCueChange = this.handleCueChange.bind(this);
+          this.handleCueEnter = this.handleCueEnter.bind(this);
+          this.handleCueExit = this.handleCueExit.bind(this);
+      }
+      render() {
+          return x `
+      ${this.tokens.map((token, index) => x `
+      <jp-token
+        token="${token}"
+        .handleTokenClick="${this.handleTokenClick}"
+      ></jp-token>
+      ${index === this.tokens.length - 1 ?
+            '' :
+            x `<span> </span>`}
+    `)}
+    `;
+      }
+      connectedCallback() {
+          super.connectedCallback();
+          this.textTrack.addEventListener('cuechange', this.handleCueChange);
+      }
+      disconnectedCallback() {
+          super.disconnectedCallback();
+          this.textTrack.removeEventListener('cuechange', this.handleCueChange);
+      }
+      handleCueChange(event) {
+          var _a;
+          const textTrack = event.target;
+          const vttCue = (_a = textTrack.activeCues) === null || _a === void 0 ? void 0 : _a[0];
+          if (!vttCue)
+              return;
+          this.handleCueEnter(vttCue);
+          const exitHandler = () => this.handleCueExit(vttCue);
+          vttCue.addEventListener('exit', exitHandler);
+          // @ts-expect-error Pass link to exitHandler through vttCue.
+          vttCue.exitHandler = exitHandler;
+      }
+      handleCueEnter(vttCue) {
+          this.updateLine(vttCue.text);
+      }
+      handleCueExit(vttCue) {
+          // @ts-expect-error Pass link to exitHandler through vttCue.
+          if (vttCue.exitHandler) {
+              // @ts-expect-error Pass link to exitHandler through vttCue.
+              vttCue.removeEventListener('exit', vttCue.exitHandler);
+              // @ts-expect-error Pass link to exitHandler through vttCue.
+              vttCue.exitHandler = null;
+          }
+          this.clearLine();
+      }
+      updateLine(line) {
+          this.clearLine();
+          this.tokens = this.parseTokens(line);
+          this.active = true;
+      }
+      clearLine() {
+          this.active = false;
+          this.tokens = [];
+      }
+      parseTokens(line) {
+          return line.split(' ');
+      }
+  }
+  JpLine.is = 'jp-line';
+  JpLine.styles = styles;
+  __decorate([
+      n({ type: String }),
+      __metadata("design:type", Object)
+  ], JpLine.prototype, "lang", void 0);
+  __decorate([
+      n({ type: Object }),
+      __metadata("design:type", TextTrack)
+  ], JpLine.prototype, "textTrack", void 0);
+  __decorate([
+      n({ type: Array }),
+      __metadata("design:type", Array)
+  ], JpLine.prototype, "tokens", void 0);
+  __decorate([
+      n({ type: Boolean, reflect: true }),
+      __metadata("design:type", Object)
+  ], JpLine.prototype, "active", void 0);
+  __decorate([
+      n({ type: Function }),
+      __metadata("design:type", Function)
+  ], JpLine.prototype, "handleTokenClick", void 0);
+  customElements.define(JpLine.is, JpLine);
+
+  class JpSubtitles extends s {
+      render() {
+          if (!this.textTracks) {
+              return x ``;
+          }
+          return x `
+      ${Array.from(this.textTracks).map((textTrack) => (x `
+          <jp-line
+            lang="${textTrack.language}"
+            .textTrack="${textTrack}"
+            .handleTokenClick="${this.handleTokenClick}"
+          "></jp-line>
+        `))}
+    `;
+      }
+  }
+  JpSubtitles.is = 'jp-subtitles';
+  JpSubtitles.styles = styles$1;
+  __decorate([
+      n({ type: Object }),
+      __metadata("design:type", TextTrackList)
+  ], JpSubtitles.prototype, "textTracks", void 0);
+  __decorate([
+      n({ type: Function }),
+      __metadata("design:type", Function)
+  ], JpSubtitles.prototype, "handleTokenClick", void 0);
+  customElements.define(JpSubtitles.is, JpSubtitles);
+
   class JapaneseVideoPlayer extends s {
       constructor() {
           super(...arguments);
@@ -1823,45 +2085,66 @@
       }
       render() {
           return x `
-      <div id="container">
-        <video
-            id="video"
-            src="${this.src}"
-            preload="metadata"
-            controls
-            controlsList="nodownload"
-        >
-          <!-- <tracks> -->
-          ${this.subtitles.map((subtitle) => x `
-                <track
-                    kind="subtitles"
-                    src="${subtitle.src}"
-                    srclang="${subtitle.srclang}"
-                    label="${subtitle.label}"
-                    ${subtitle.default ? 'default' : ''}
-                >`)}
-        </video>
-      </div>
-    `;
+      <video
+        id="video"
+        src="${this.src}"
+        preload="auto"
+        controls
+        controlsList="nodownload"
+      >
+        ${this.subtitles.map((subtitle) => x `
+            <track
+              id="${subtitle.srclang}"
+              kind="subtitles"
+              src="${subtitle.src}"
+              srclang="${subtitle.srclang}"
+              label="${subtitle.label}"
+              ${subtitle.default ? 'default' : ''}
+            >`)}
+          Your browser does not support the video tag.
+      </video>
+      <jp-subtitles .handleTokenClick="${this.handleTokenClick}"></jp-subtitles>
+  `;
+      }
+      updated(changedProperties) {
+          if (changedProperties.has('subtitles') && this.videoElement) {
+              this.subtitlesElement.textTracks = this.videoElement.textTracks;
+          }
+      }
+      firstUpdated(changedProperties) {
+          if (changedProperties.has('subtitles') && this.videoElement) {
+              this.loadSubtitles();
+          }
+      }
+      loadSubtitles() {
+          for (const textTrack of this.videoElement.textTracks) {
+              textTrack.mode = 'showing';
+              textTrack.mode = 'hidden';
+          }
       }
   }
   JapaneseVideoPlayer.is = 'japanese-video-player';
-  JapaneseVideoPlayer.styles = i$2 `
-    :host {
-      display: block;
-    }
-    video {
-      width: 100%;
-    }
-  `;
+  JapaneseVideoPlayer.styles = style$1;
   __decorate([
       n({ type: String }),
       __metadata("design:type", Object)
   ], JapaneseVideoPlayer.prototype, "src", void 0);
   __decorate([
-      n({ type: (Array) }),
-      __metadata("design:type", Object)
+      n({ type: Array }),
+      __metadata("design:type", Array)
   ], JapaneseVideoPlayer.prototype, "subtitles", void 0);
+  __decorate([
+      n({ type: Function }),
+      __metadata("design:type", Function)
+  ], JapaneseVideoPlayer.prototype, "handleTokenClick", void 0);
+  __decorate([
+      e('#video'),
+      __metadata("design:type", HTMLVideoElement)
+  ], JapaneseVideoPlayer.prototype, "videoElement", void 0);
+  __decorate([
+      e(JpSubtitles.is),
+      __metadata("design:type", JpSubtitles)
+  ], JapaneseVideoPlayer.prototype, "subtitlesElement", void 0);
   customElements.define(JapaneseVideoPlayer.is, JapaneseVideoPlayer);
 
   exports.JapaneseVideoPlayer = JapaneseVideoPlayer;
